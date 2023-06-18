@@ -8,49 +8,115 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="scripts/script.js"></script>
         
     </head>
     <body>
         <nav id = "nav">
             <ul class = "left">
-                <li><a href="#nav">Wen Xu</a></li>
+                <li><a href="#main">Wen Xu</a></li>
             </ul>
             <ul class = "right">
                 <li><a href="#research">Research</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="wen-xu-cv.pdf" target = "_blank">CV</a></li>
             </ul>
         </nav>
-
-        <div id = "intro">
-            <div id = "portrait">
-                <img id = "portrait-image" src="images/portrait.jpeg"/>
-            </div>
-            <div id = "text">
-                <h1>Wen Xu <span id = "chinese" lang = "zh-CN">徐闻</span></h1>
+        <div id = "main">
+            
+            <div id = "intro">
+                <div id = "portrait">
+                    <img id = "portrait-image" src="images/portrait.jpeg"/>
+                </div>
+                <div id = "text">
+                    <h1>Wen Xu <span id = "chinese" lang = "zh-CN">徐闻</span></h1>
+                    
+                    <p>I am a senior at Middlebury College studying Psychology and Computer Science, graduating in Februrary 2024. </p>
+                    <p>I am interested in understanding how people <strong>reason and make decisions</strong> regarding abstract and complex problems, especially with the aid of <strong>visual information</strong>. </p>
+                    <p>Eventually, I hope that leveraging these insights would help people better understand the world and facilitate <strong>attitude and behavior change</strong>. </p>
+                </div>
                 
-                <p>I am ...</p>
-                <p>I am interested in...</p>
+            </div>
+
+        
+            <div class = "section" id = "research">
+                <h1 class = "section-title">Research</h1>
+                <div class = "researchSection" id = "viz">
+                    <div id = text>
+                        <h2>Concrete Data Visualization Designs</h2>
+                        <p><em>Can visualization design choices lead people to see information in more concrete lens? </em></p>
+                        <p>Traditional forms of data visualizations, such as a bar chart, abstract individual data points into aggregate geometric elements. Some visualization practitioners argue that this form of visualization distant the audience from what the data represent in the real world. When used to raise concerns in issues such as human suffering, abstract visualizations can fail to evoke empathy. </p>
+                        <p>In my senior thesis project, I am investigating how we can design visualizations that prime viewers to think in a <strong>concrete mindset</strong>. I use the <strong>Construal Level Theory</strong> in psychology to understand how concrete visualization designs may affect people’s engagement with information in a variety of ways, from bringing things closer to emphasizing concrete factors in decision making. </p>
+                    </div>
+                    <div id = pic>
+                        <img src = "images/polar-bear-viz.png"/>
+                    </div>
+                </div>
+
+                <div class = "researchSection" id = "climate">
+                    <div id = text>
+                        <h2>Climate Change Perception and Decision Making</h2>
+                        <p><em>When does bringing climate impacts closer motivate action and when does it backfire? </em></p>
+                        <p>There is an <em>“attitude-behavior gap”</em> when it comes to the climate crisis: people are not taking enough action that matches their expressed concerns. One reason could be that the impacts of climate change are not perceived as close and tangible enough to drive behavioral change. We tend to see climate change as influencing <strong>distant</strong> places in the far future. </p>
+                        <p>Surprisingly, some research have found that learning about local climate impacts made people even <em>less</em> willing to take action. Could proximal impacts become too threatening and evoke denial and desperation? My research aims to untangle the relationship between the <strong>psychological distance</strong> of climate change and intentions to act by looking into other factors in play, such as one’s personal values and perceived efficacy of their own actions. The findings will hopefully inform how we communicate the climate crisis, along with other environmental and societal problems that feel distant and abstract, in order to promote behavioral change for the good. </p>
+                    </div>
+                    <div id = pic>
+                        <img src = "images/enhancement_policy.png"/>
+                    </div>
+                </div>
+
+<!--                 <div class = "researchSection" id = "bias">
+                    <div id = text>
+                        <h2>Cognitive Bias in Problem Solving</h2>
+                        <p><em>Do people have a bias towards additive solutions than subtractive ones? </em></p>
+
+                    </div>
+                    <div id = pic>
+
+                    </div>
+                </div>
+
+                <div class = "researchSection" id = "waste">
+                    <div id = text>
+                        <h2>Industrial Ecology</h2>
+                        <p><em>Analyzing and modeling the generation, trade, and recycling of urban waste. </em></p>
+                        
+                    </div>
+                    <div id = pic>
+
+                    </div>
+                </div> -->
+                
+                
+            </div>
+
+            <div class = "section" id = "portfolio">
+                <h1 class = "section-title">Portfolio</h1>
+                <div id = text>
+                    <p>I enjoy creating visual experiences and narratives in different forms like information visualizations and digital art. </p>
+                </div>
+                <div id = "images">
+                    <a href = "https://wendianaxu.github.io/microplastics-in-cosmetics/" target = "_blank"><img src = "images/mp.png" class = "large"/></a>
+                    <a href = "https://wendianaxu.github.io/image-bubbles/" target = "_blank"><img src = "images/image-bubbles.png" class = "large"/></a>
+                    <a href = "#plant"><img src = "images/wen_xu_plant.jpg" id = "plantImageSmall"/></a>
+                    <a href = "#collage"><img src = "images/wen_xu_collage.jpg" /></a>
+                </div>
             </div>
             
+
+            <div class = "section" id = "contact">
+                <h1 class = "section-title">Contact</h1>
+                <div id = text>
+                    <p>I enjoy creating visual experiences and narratives in different forms like information visualizations and digital art. </p>
+                </div>
+
         </div>
 
-        <div id = "main">
-            <div id = "research">
-
-            </div>
-
-            <div id = "portfolio">
-
-            </div>
-
-            <div id = "contact">
-
-            </div>
-        </div>
+    </div>
 
         <footer id = "footer">
-
+            2023 &#169; Wen Xu
         </footer>
 
         <script src="scripts/main.js"></script>
