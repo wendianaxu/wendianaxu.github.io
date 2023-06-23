@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="scripts/script.js"></script>
+        <script src="scripts/fslightbox.js"></script>
         
     </head>
     <body>
@@ -34,7 +35,8 @@
                     
                     <p>I am a senior at Middlebury College studying Psychology and Computer Science, graduating in Februrary 2024. </p>
                     <p>I am interested in understanding how people <strong>reason and make decisions</strong> regarding abstract and complex problems, especially with the aid of <strong>visual information</strong>. </p>
-                    <p>Eventually, I hope that leveraging these insights would help people better understand the world and facilitate <strong>attitude and behavior change</strong>. </p>
+                    <p>I hope to leverage these insights to design visual communication that reduces <strong>cognitive biases</strong> and facilitates <strong>behavior change</strong> regarding problems that call for collective action. </p>
+                    
                 </div>
                 
             </div>
@@ -93,22 +95,95 @@
 
             <div class = "section" id = "portfolio">
                 <h1 class = "section-title">Portfolio</h1>
-                <div id = text>
-                    <p>I enjoy creating visual experiences and narratives in different forms like information visualizations and digital art. </p>
+                <div class = "text">
+                    <p>I enjoy creating visual experiences and narratives in different forms. </p>
+                    <p>On the web I make information visualizations with D3.js and generative art with p5.js: </p> 
                 </div>
-                <div id = "images">
-                    <a href = "https://wendianaxu.github.io/microplastics-in-cosmetics/" target = "_blank"><img src = "images/mp.png" class = "large"/></a>
-                    <a href = "https://wendianaxu.github.io/image-bubbles/" target = "_blank"><img src = "images/image-bubbles.png" class = "large"/></a>
-                    <a href = "#plant"><img src = "images/wen_xu_plant.jpg" id = "plantImageSmall"/></a>
-                    <a href = "#collage"><img src = "images/wen_xu_collage.jpg" /></a>
+
+                <div class = "images">
+                    <div class = "row">
+                        <div class = "item">
+                            <a class = "preview" href = "https://wendianaxu.github.io/microplastics-in-cosmetics/" target = "_blank">
+                                <img src = "images/mp.png" class = "large"/>
+                            </a>
+                            <div class = "caption">
+                                <em>Interactive data story on microplastic ingredients in cosmetics</em>
+                            </div>
+                        </div>
+                       
+                        <div class = "item">
+                            <a class = "preview" href = "https://wendianaxu.github.io/image-bubbles/" target = "_blank">
+                                <img src = "images/image-bubbles.png" class = "large"/>
+                            </a>
+                            <div class = "caption">
+                                <em>Generative art piece: transform image into a landscape of colorful bubbles</em>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class = "text">
+                    <p>I also enjoy photography and digital collaging: </p>
+                </div>
+                
+                <div class = "image-grid">
+                    <img class = "preview" id = "collage" src = "images/wen_xu_collage.jpg" onclick = "openLightbox(); toSlide(1)"/>
+                    <img class = "preview" id = "hornbill" src = "images/hornbill.jpg" onclick = "openLightbox(); toSlide(2)"/>
+                    <img class = "preview" id = "fruit" src = "images/fruit.jpg" onclick = "openLightbox(); toSlide(3)"/>
+                    <img class = "preview" id = "blue-bird" src = "images/blue-bird.jpg" onclick = "openLightbox(); toSlide(4)"/>
+                    <img class = "preview" id = "green-bird" src = "images/green-bird.jpg" onclick = "openLightbox(); toSlide(5)"/>
+                    <img class = "preview" id = "xiamen1" src = "images/xiamen1.jpg" onclick = "openLightbox(); toSlide(6)"/>
+                    <img class = "preview" id = "xiamen2" src = "images/xiamen2.jpg" onclick = "openLightbox(); toSlide(7)"/>
+                </div>
+
+                <div id = "lightbox" class = "modal">
+                    <span class = "close pointer" onclick = "closeLightbox()">&times;</span>
+
+                    <div class = "modal-content">
+                        <div class = "slide">
+                            <img class = "slide-image" src = "images/wen_xu_collage.jpg"/>
+                        </div>
+                        <div class = "slide">
+                            <img class = "slide-image" src = "images/hornbill.jpg" />
+                        </div>
+                        <div class = "slide">
+                            <img class = "slide-image" src = "images/fruit.jpg" />
+                        </div>
+                        <div class = "slide">
+                            <img class = "slide-image" src = "images/blue-bird.jpg" />
+                        </div>
+                        <div class = "slide">
+                            <img class = "slide-image" src = "images/green-bird.jpg" />
+                        </div>
+                        <div class = "slide">
+                            <img class = "slide-image" src = "images/xiamen1.jpg" />
+                        </div>
+                        <div class = "slide">
+                            <img class = "slide-image" src = "images/xiamen2.jpg" />
+                        </div>
+
+                        <a class = "previous" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class = "next" onclick="changeSlide(1)">&#10095;</a>
+
+                        <div class="dots">
+                            <span class = "dot">&bull;</span>
+                            <span class = "dot">&bull;</span>
+                            <span class = "dot">&bull;</span>
+                            <span class = "dot">&bull;</span>
+                            <span class = "dot">&bull;</span>
+                            <span class = "dot">&bull;</span>
+                            <span class = "dot">&bull;</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
 
             <div class = "section" id = "contact">
-                <h1 class = "section-title">Contact</h1>
-                <div id = text>
-                    <p>I enjoy creating visual experiences and narratives in different forms like information visualizations and digital art. </p>
+                <h1 class = "section-title">Connect with me</h1>
+                <div class = "text">
+                    <p>wenx [at] middlebury [dot] edu</p>
                 </div>
 
         </div>
@@ -116,10 +191,8 @@
     </div>
 
         <footer id = "footer">
-            2023 &#169; Wen Xu
+            &#169; 2023 Wen Xu
         </footer>
-
-        <script src="scripts/main.js"></script>
 
     </body>
 </html>

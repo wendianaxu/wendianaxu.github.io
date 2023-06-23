@@ -40,3 +40,49 @@ for (let i = 0; i < coll.length; i++) {
     }
   });
 } */
+
+// lightbox
+let slideIndex = 1;
+showSlide(slideIndex);
+
+function openLightbox() {
+  document.getElementById('lightbox').style.display = 'block';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+};
+
+function changeSlide(n) {
+  showSlide(slideIndex += n);
+};
+
+function toSlide(n) {
+  showSlide(slideIndex = n);
+};
+
+function showSlide(n) {
+  const slides = document.getElementsByClassName('slide');
+  let dots = document.getElementsByClassName('dot');
+
+  if (n > slides.length) {
+    slideIndex = 1;	
+  };
+  
+  if (n < 1) {
+    slideIndex = slides.length;
+  };
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  };
+  
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(' active', '');
+  };
+  
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].className += ' active';
+};
+
+

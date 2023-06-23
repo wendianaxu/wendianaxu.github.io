@@ -12,6 +12,10 @@ body{
     padding: 0;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 h1{
     display: block;
     font-size: 2em;
@@ -61,7 +65,7 @@ em{
     justify-content: center;
     align-items: center;
     margin: 5% 0 0 0;
-    padding: 5% 0% 0 10%;
+    padding: 5% 0% 10% 10%;
     left: 0;
 }
 
@@ -94,7 +98,7 @@ em{
 nav{
     display: inline-block;
     color: #007582;
-    /* background-color: #f0f8f8; */
+    background-color: #f0f8f8;
 
     text-align: center;
     font-size: 1.7em;
@@ -102,6 +106,8 @@ nav{
     position: fixed;
     width: 100%;
     margin: 0;
+
+    z-index: 1;
 }
 
 nav ul{
@@ -180,7 +186,7 @@ nav a:hover{
 }
 
 .section h1{
-    width: 18%;
+    width: 21%;
     border-bottom: 3px solid #5DE0AE;
 }
 
@@ -195,7 +201,7 @@ nav a:hover{
 }
 
 .researchSection #pic{
-    padding: 18% 5% 0 10%;
+    padding: 8% 5% 0 10%;
 }
 
 .researchSection #pic img{
@@ -209,7 +215,7 @@ nav a:hover{
 
 }
 
-#portfolio #text {
+#portfolio .text {
     padding: 0 5% 0% 8%;
 }
 
@@ -217,36 +223,205 @@ nav a:hover{
     padding-top: 0;
 }
 
-#images{
+.images{
     width: 85%;
-    margin: 1% auto 11% auto; /* center */
+    margin: 0 auto 3% auto; /* center */
 }
 
-#images img{
-    width: 20%;
-    margin: 0 0.6% 8% 0.6%;
+.image-grid{
+    width: 85%;
+    margin: 0 auto 3% auto; /* center */
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
 }
 
-#images .large{
-    width: 48%;
+.image-grid .preview{
+    width: 105%;
+    margin: 0 0.6% 3% 0.6%;
+
+    object-fit: contain;
 }
 
-#images #plantImageSmall{
+#collage{
+    grid-row: 1 / 3;
+    grid-column: 1;
+}
+
+#hornbill{
+    grid-row: 1 / 3;
+    grid-column: 2;
+    margin-left: 5%;
+}
+
+#fruit{
+    grid-row: 1 / 3;
+    grid-column: 3;
+}
+
+#blue-bird, #green-bird{
+    margin-top: 8%;
+}
+
+#xiamen1, #xiamen2{
+    margin-bottom: 8%;
+}
+
+.images .large{
+    max-width: 90%;
+}
+
+.images #plantImageSmall{
     width: 17.7%;
 }
 
+.caption{
+    width: 100%;
+    margin-top: 1%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.row > *{
+    flex: 1;
+}
+  
+.row > .col {
+    padding: 0 1px;
+}
+  
+.col {
+float: left;
+width: 50%;
+}
 
 
-a{
+
+/* lightbox */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .5);
+
+    z-index: 2;
+  }
+  
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 0 0 0 0;
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  .preview{
+    cursor: pointer;
     text-decoration: none;
     color: inherit; 
     transition: all ease-in-out .15s;
+
+    object-fit: contain;
+    height: 80%;
 }
 
-a:hover{
+    .preview:hover{
+        opacity: .8;
+    }
+
+  .slide {
+    display: none;
+  }
+  
+  .slide-image {
+    display: block;
+    float: none;
+    height: 750px;
+    margin: 2% auto 0 auto;
+  }
+
+  .close {
+    color: rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 2%;
+    left: 96%;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    opacity: .5;
+    text-decoration: none;
+  }
+
+  .previous,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin: 0 -70px 0 -70px;
+    color: rgba(255, 255, 255, .8);
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.previous{
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.previous:hover,
+.next:hover {
+  opacity: .5;
+}
+
+.dots{
+    margin: -1% auto 0 auto;
+}
+
+.dot{
+    color: white;
+    font-size: 3em;
     opacity: .5;
 }
 
+.active{
+    opacity: 1;
+}
+
+/* contact */
+#contact .text {
+    padding: 0 0 8% 8%;
+}
+
+#contact p{
+    padding: 0;
+}
 
 
 /* footer */
