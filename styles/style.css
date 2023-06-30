@@ -230,7 +230,7 @@ nav a:hover{
 
 .image-grid{
     width: 85%;
-    margin: 0 auto 3% auto; /* center */
+    margin: -3% auto 3% auto; /* center */
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -290,12 +290,15 @@ nav a:hover{
 .caption{
     width: 100%;
     margin-top: 1%;
+    margin-bottom: 5%;
 }
 
 .row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    margin-top: -1%;
     
 }
 
