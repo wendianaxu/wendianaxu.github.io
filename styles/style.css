@@ -4,7 +4,7 @@
 body{
     font-family: 'Montserrat', sans-serif;
     color: #034148;
-    background-color: #f0f8f8;
+    background-color: #f4fbfb;
 }
 
 *{
@@ -48,12 +48,17 @@ ul{
 }
 
 strong{
-    /* font-weight: bold; */
-    color: #5DE0AE;
+    font-weight: normal;
+
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-color: #5de0aed3;
+    text-decoration-thickness: 4px;
+    color: inherit;
 }
 
 em{
-    color: #007582;
+    color: #2c6c53d3;
 }
 
 /* intro */
@@ -98,7 +103,7 @@ em{
 nav{
     display: inline-block;
     color: #007582;
-    background-color: #f0f8f8;
+    background-color: #f4fbfb;
 
     text-align: center;
     font-size: 1.7em;
