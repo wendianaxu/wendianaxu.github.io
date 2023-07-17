@@ -348,7 +348,12 @@ width: 50%;
     max-width: 1200px;
   }
 
-  .preview{
+.item{
+    position: relative;
+    transition: all ease-in-out .2s;
+}
+
+.preview{
     cursor: pointer;
     text-decoration: none;
     color: inherit; 
@@ -358,9 +363,42 @@ width: 50%;
     height: 80%;
 }
 
-    .preview:hover{
-        opacity: .8;
-    }
+.preview:hover{
+    opacity: .8;
+}
+
+.detail{
+    position: absolute;
+    top: 0;
+
+    background-color: #4bb38bb4;
+
+    width: 90%;
+    height: 99%;
+
+    align-items: center;
+
+    opacity: 0;
+
+    transition: all ease-in-out .2s;
+}
+
+.detail-text-wrapper{
+    padding: 20% 5%;
+    text-align: center;
+    color: #ffffffc7;
+    font-size: 1.2em;
+}
+
+.detail-text{
+    padding-bottom: 1%;
+}
+
+.detail-text.bold{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
 
   .slide {
     display: none;

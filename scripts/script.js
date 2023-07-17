@@ -26,20 +26,21 @@ $(document).ready(function(){
     });
 });
 
-// collapsible sections
-/* const coll = document.getElementsByClassName("researchSection");
+// show portfolio work detail on hover
+showDetail();
 
-for (let i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    const content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-} */
+function showDetail(){
+  const previews = document.getElementsByClassName('item');
+  Array.from(previews).forEach((e, i) => {
+    const detail = e.children[1];
+    e.addEventListener('mouseover', () => {
+      detail.style.opacity = 1;
+    })
+    e.addEventListener('mouseleave', () => {
+      detail.style.opacity = 0;
+    })
+  })
+}
 
 // lightbox
 let slideIndex = 1;
@@ -84,5 +85,6 @@ function showSlide(n) {
   slides[slideIndex - 1].style.display = 'block';
   dots[slideIndex - 1].className += ' active';
 };
+
 
 
