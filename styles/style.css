@@ -43,6 +43,19 @@ a{
     color: inherit; 
 }
 
+
+.in-text{
+    font-weight: 500;
+    color: #007582;
+    text-decoration: none; 
+    border-bottom: dotted 1.5px;
+    transition: all ease-in-out .2s;
+  }
+  
+.in-text:hover {
+    color: #65a5a6;
+}
+
 ul{
     list-style: none;
 }
@@ -65,12 +78,12 @@ em{
 
 #intro{
     display: flex;
-    width: 90%; 
+    width: 100%; 
     height: auto;
     justify-content: center;
     align-items: center;
     margin: 5% 0 0 0;
-    padding: 5% 0% 10% 10%;
+    padding: 5% 0% 10% 5%;
     left: 0;
 }
 
