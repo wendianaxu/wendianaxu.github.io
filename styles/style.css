@@ -56,7 +56,7 @@
     #intro #text{
         display: block;
 
-        vertical-align: middle;
+        text-align: center;
         padding: 0 4% 0 4%;
     }
 
