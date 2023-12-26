@@ -47,7 +47,7 @@ let slideIndex = 1;
 showSlide(slideIndex);
 
 function openLightbox() {
-  document.getElementById('lightbox').style.display = 'block';
+  document.getElementById('lightbox').style.display = 'flex';
 }
 
 function closeLightbox() {
@@ -82,9 +82,22 @@ function showSlide(n) {
     dots[i].className = dots[i].className.replace(' active', '');
   };
   
-  slides[slideIndex - 1].style.display = 'block';
+  slides[slideIndex - 1].style.display = 'flex';
   dots[slideIndex - 1].className += ' active';
 };
+
+// click background to quit for mobile
+function mobile(media) {
+  if (media.matches) { 
+    $(".modal").on('click', function(event) {
+      closeLightbox();
+    })
+  }
+}
+
+const media = window.matchMedia("(max-width: 1000px)")
+
+mobile(media)
 
 
 
