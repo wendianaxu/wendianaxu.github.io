@@ -55,6 +55,7 @@
     
     #intro #text{
         display: block;
+        width: 100%;
 
         text-align: center;
         padding: 0 4% 0 4%;
@@ -64,12 +65,12 @@
         grid-template-columns: 100%;
     }
     
-    .researchSection #text{
-        padding: 0 5% 0% 8%;
+    .researchSection .text{
+        margin: 0 5% 0% 8%;
     }
 
-    .researchSection #pic{
-        padding: 2% 5% 5% 10%;
+    .researchSection .pic{
+        margin: 2% 5% 5% 10%;
     }
 }
 
@@ -132,12 +133,12 @@
         grid-template-columns: 55% 45%;
     }
     
-    .researchSection #text{
-        padding: 0 5% 40% 15%;
+    .researchSection .text{
+        margin: 0 5% 40% 15%;
     }
 
-    .researchSection #pic{
-        padding: 8% 5% 0 10%;
+    .researchSection .pic{
+        margin: 8% 5% 0 10%;
     }
 }
 
@@ -328,7 +329,15 @@ nav a:hover{
     width: 100%;
 }
 
-.researchSection #pic img{
+.researchSection .text{
+    width: 87%;
+}
+
+.researchSection .img{
+    width: 87%;
+}
+
+.researchSection .pic img{
     width: 80%;
 }
 
@@ -340,7 +349,8 @@ nav a:hover{
 }
 
 #portfolio .text {
-    padding: 0 5% 0% 8%;
+    width: 87%;
+    margin: 0 5% 0% 8%;
 }
 
 #portfolio p{
