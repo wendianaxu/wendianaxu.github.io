@@ -11,11 +11,11 @@
     }
 
     p{
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 
     nav{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     nav ul.left{
@@ -30,7 +30,7 @@
     #intro{
         display: flex;
         flex-wrap: wrap;
-        width: 90%; 
+        width: 75%; 
 
         height: auto;
         justify-content: center;
@@ -48,8 +48,8 @@
     #intro #portrait-image{
         display: block;
 
-        height: 50vw;
-        width: 50vw;
+        height: 30vw;
+        width: 30vw;
         border-radius: 50%;
     }
     
@@ -112,7 +112,7 @@
         justify-content: center;
         align-items: center;
         margin: 5% 0 0 0;
-        padding: 5% 0% 10% 5%;
+        padding: 5% 5% 5% 5%;
         left: 0;
     }
     
@@ -319,6 +319,7 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
 
     width: 100%;
 }
@@ -326,7 +327,8 @@ nav a:hover{
 /* research */
 
 .section{
-    width: 100%;
+    width: 75%;
+    align-items: center;
     
 }
 
@@ -353,11 +355,6 @@ nav a:hover{
 }
 
 /* portfolio */
-
-#portfolio{
-    width: 100%;
-
-}
 
 #portfolio .text {
     width: 87%;
