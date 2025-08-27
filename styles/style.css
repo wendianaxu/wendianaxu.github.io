@@ -440,29 +440,34 @@ nav a:hover{
     margin: 0 auto; /* This centers the content block */
 }
 
-.researchSection {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
 #research, #portfolio, #contact, #pub {
     max-width: 1000px; 
     margin-left: auto;
     margin-right: auto;
 }
 
-.research-text {
-    order: 1; /* This column will appear first */
+ .researchSection {
+    width: 100%;
+ }
+
+@media (max-width: 768px) {
+    .researchSection .research-img img{
+    width: 80%;
+}
+}
+
+@media (min-width: 768px) {
+    .researchSection .research-img img{
+        width: 100%; 
+    }
 }
 
 .research-img {
-    order: 2; /* This column will appear second */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
-
-.researchSection .research-img img{
-    width: 80%;
-}
 
 /* portfolio */
 
