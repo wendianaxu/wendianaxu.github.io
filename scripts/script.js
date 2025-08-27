@@ -42,8 +42,27 @@ function showDetail(){
   })
 }
 
+// modal
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the modal and the image element inside the modal
+    const galleryModal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+
+    // Add an event listener to the modal to catch clicks on gallery items
+    galleryModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        const button = event.relatedTarget; 
+
+        // Extract image source from data-img-src attribute
+        const imgSrc = button.getAttribute('data-img-src');
+
+        // Update the modal's image source
+        modalImage.setAttribute('src', imgSrc);
+    });
+});
+
 // lightbox
-let slideIndex = 1;
+/* let slideIndex = 1;
 showSlide(slideIndex);
 
 function openLightbox() {
@@ -97,7 +116,7 @@ function mobile(media) {
 
 const media = window.matchMedia("(max-width: 1000px)")
 
-mobile(media)
+mobile(media) */
 
 
 

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Noto+Serif+SC:wght@400;700&display=swap');
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
 
     h1{
         font-size: 1.7rem;
@@ -8,13 +8,14 @@
 
     h2{
         font-size: 1rem;
+        font-weight:bold;
     }
 
     p{
         font-size: 1rem;
     }
 
-    nav{
+    .nav-link, .navbar-brand{
         font-size: 1.5rem;
     }
 
@@ -27,7 +28,7 @@
         margin: 0.7em 0;
     }
 
-    #intro{
+/*     #intro{
         display: flex;
         flex-wrap: wrap;
         width: 75%; 
@@ -38,30 +39,30 @@
         margin: 10% 0 0 0;
         padding: 5% 5% 10% 5%;
         left: 0;
-    }
+    } */
     
 /*     #intro #portrait{
         display: table-cell;
         vertical-align: middle;
     } */
     
-    #intro #portrait-image{
+/*     #intro #portrait-image{
         display: block;
 
         height: 30vw;
         width: 30vw;
         border-radius: 50%;
-    }
+    } */
     
-    #intro #text{
+/*     #intro #text{
         display: block;
         width: 100%;
 
         text-align: center;
         padding: 0 4% 0 4%;
-    }
+    } */
 
-    .researchSection{
+/*     .researchSection{
         grid-template-columns: 100%;
     }
     
@@ -78,9 +79,10 @@
     .close{
         display: none;
     }
+} */
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
     h1{
         font-size: 2rem;
     }
@@ -93,19 +95,17 @@
         font-size: 1.15rem;
     }
 
-    nav{
+    .nav-link, .navbar-brand{
         font-size: 1.7rem;
     }
+
 
     nav ul.right{
         width: 50%;
     }
 
-    nav ul{
-        margin: 0.7em;
-    }
 
-    #intro{
+/*     #intro{
         display: flex;
         width: 100%; 
         height: auto;
@@ -150,7 +150,7 @@
     .previous,
     .next {
         display: block;
-    }
+    } */
 }
 
 html, body{
@@ -184,13 +184,13 @@ h1{
 }
 
 .section-title{
-    margin-inline-start: 8%;
     padding-top: 5%;
     height: 40px;
 }
 
 p{
-    padding: 2.5% 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 a{
@@ -233,12 +233,50 @@ em{
 
 #chinese{
     font-family: 'Noto Serif SC', serif;
+}
+
+/* Styling for the Intro Section */
+#intro {
+    min-height: 90vh; 
+}
+
+#portrait-image {
+    width: 300px;  
+    height: 300px; 
+    border-radius: 50%; 
+    object-fit: cover; /* ensures the image covers the area without distortion */
+}
+
+#intro-name {
+    display: inline-block;
+    position: relative;
+}
+
+#intro-text .pronouns {
+    font-size: 0.5em; 
+    color: #034148; 
+    font-weight: normal;
+}
+
+/* Responsive adjustments for medium and small screens */
+@media (max-width: 992px) {
+
+    #portrait-image {
+        width: 250px;  /* Slightly smaller portrait for tablets */
+        height: 250px;
+    }
+
+    #intro-text { /* center-align image and text on small screens */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align children by default */
+}
 
 }
 
 /* nav */
 
-nav{
+/* nav{
     display: inline-block;
     color: #007582;
     background-color: #f4fbfb;
@@ -298,68 +336,140 @@ nav ul.right li::after{
     bottom:0;
     background-color: #5DE0AE;
     transition: all ease-in-out .2s;
-  }
+  } */
 
-nav ul.right li:hover::after{
+/* nav ul.right li:hover::after{
     width: 100%;
     left: 0;
-  }
+  } */
 
-nav a{
+/* Target the Bootstrap navigation links */
+
+.navbar {
+    position: relative; /* This is crucial for positioning the pseudo-element */
+    padding-bottom: 8px; /* Add some space for the underline */
+    color: #007582;
+    background-color: #f4fbfb;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 2rem; 
+}
+
+
+.navbar .nav-link, .navbar .navbar-brand {
+    position: relative; /* This is crucial for positioning the pseudo-element */
+    padding-bottom: 8px; /* Add some space for the underline */
+    color: #007582;
+    background-color: #f4fbfb;
+    font-weight: bold;
+}
+
+
+
+/* Create the ::after pseudo-element for the underline */
+.navbar .nav-link::after, 
+.navbar .navbar-brand::after
+ {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially, the line has no width */
+    height: 5px; 
+    background-color: #5DE0AE; 
+    transition: width 0.3s ease-in-out; /* The animation effect */
+}
+
+.navbar .navbar-brand::after
+ {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; 
+    background-color: #5DE0AE; 
+    transition: width 0.3s ease-in-out; /* The animation effect */
+}
+
+
+/* On hover, make the ::after pseudo-element grow to full width */
+.navbar .nav-link:hover::after, 
+.navbar .navbar-brand:hover::after {
+    width: 100%; /* The line grows to the full width of the nav-link */
+}
+
+.navbar .nav-link:hover, 
+.navbar .navbar-brand:hover {
+    color: #5DE0AE; 
+}
+
+  
+
+/* nav a{
     display: inline-block;
     transition: color 0.2s ease;
 }
 
 nav a:hover{
     color: #5DE0AE;
-}
+} */
 
 /* main */
 #main{
-    display: flex;
+/*     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: center; */
 
     width: 100%;
 }
 
 /* research */
 
-.section{
-    width: 75%;
-    align-items: center;
-    
-}
 
 .section h1{
     width: fit-content;
-    border-bottom: 3px solid #5DE0AE;
+    border-bottom: 5px solid #5DE0AE;
 }
 
-.researchSection{
-    display: grid;
-    width: 100%;
+.content-section {
+    width: 75%;
+    margin: 0 auto; /* This centers the content block */
 }
 
-.researchSection .text{
-    width: 87%;
+.researchSection {
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-.researchSection .img{
-    width: 87%;
+#research, #portfolio, #contact, #pub {
+    max-width: 1000px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.researchSection .pic img{
+.research-text {
+    order: 1; /* This column will appear first */
+}
+
+.research-img {
+    order: 2; /* This column will appear second */
+}
+
+
+.researchSection .research-img img{
     width: 80%;
 }
 
 /* portfolio */
 
-#portfolio .text {
+/* #portfolio .text {
     width: 87%;
     margin: 0 5% 0% 8%;
-}
+} */
 
 #portfolio p{
     padding-top: 0;
@@ -387,7 +497,7 @@ nav a:hover{
     object-fit: contain;
 }
 
-#collage{
+/* #collage{
     grid-row: 1 / 3;
     grid-column: 1;
 }
@@ -414,7 +524,7 @@ nav a:hover{
 
 #green-bird{
     margin-top: -10%;
-}
+} */
 
 .images .large{
     max-width: 90%;
@@ -430,7 +540,7 @@ nav a:hover{
     margin-bottom: 5%;
 }
 
-.row {
+/* .row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -450,167 +560,102 @@ nav a:hover{
 .col {
 float: left;
 width: 50%;
+} */
+
+/* modal */
+
+.gallery-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 3 / 4; /* Creates a 3:4 portrait aspect ratio for the frame */
 }
 
-
-
-/* lightbox */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
+.gallery-item img {
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, .5);
-
-    z-index: 2;
-  }
-  
-  .modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    padding: 0 0 0 0;
-    width: 80%;
-    max-width: 1200px;
-  }
-
-.item{
-    position: relative;
-    transition: all ease-in-out .2s;
+    object-fit: cover; /* Makes the image fill the frame without distortion */
+    transition: transform 0.4s ease;
 }
 
-.preview{
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit; 
-    transition: all ease-in-out .15s;
-
-    object-fit: contain;
-    height: 80%;
+#flowers {
+    object-position: 50% 10%
 }
 
-.preview:hover{
-    opacity: .8;
+#blue-bird {
+    object-position: 60%
 }
 
-.detail{
-    position: absolute;
-    top: 0;
-
-    background-color: #4bb38bb4;
-
-    width: 90%;
-    height: 99%;
-
-    align-items: center;
-
-    opacity: 0;
-
-    transition: all ease-in-out .2s;
+#green-bird {
+    object-position: 10%
 }
 
-.detail-text-wrapper{
-    height: auto;
-
-    margin: 20% 5%;
-    text-align: center;
-    color: #ffffffc7;
-    font-size: 1.2em;
+.gallery-item:hover img {
+    transform: scale(1.1);
 }
 
-.detail-text{
-    padding-bottom: 1%;
+.gallery-item {
+    overflow: hidden;
+    border-radius: .12rem;
 }
 
-.detail-text.bold{
-    font-weight: bold;
-    font-size: 1.5em;
+.gallery-item img {
+    transition: transform 0.3s ease;
 }
 
 
-  .slide {
-    display: none;
+.gallery-item:hover img {
+    transform: scale(1.05); /* Adds a subtle zoom effect on hover */
+}
 
-    align-items: center;
-  }
-  
-  .slide-image {
-    display: block;
-    float: none;
-    max-width: 100%;
-    max-height: 750px;
-    height: auto;
-    margin: 2% auto 0 auto;
-  }
+.modal-backdrop {
+   opacity: .7 !important;
+}
 
-  .close {
-    color: rgba(255, 255, 255, .8);
-    position: absolute;
-    top: 6%;
-    left: 92%;
-    font-size: 3rem;
-    cursor: pointer;
-    transition: all ease-in-out .2s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    opacity: .5;
-    text-decoration: none;
-  }
+/* Ensure the modal content itself has a transparent background */
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
 
-  .previous,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
+.modal-dialog {
     width: auto;
-    margin: 0 -70px 0 -70px;
-    color: rgba(255, 255, 255, .8);
-    font-size: 50px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
 }
 
-.previous{
-    left: 0;
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.next {
-    right: 0;
+#modalImage {
+    max-height: 85vh;
+    max-width: 85vw; 
+    object-fit: contain;
+    height: auto;
+    width: auto;
 }
 
-.previous:hover,
-.next:hover {
-  opacity: .5;
+/* publications */
+.pub-entry {
+    margin-bottom: 2rem; 
 }
 
-.dots{
-    margin: -1% auto 0 auto;
+.pub-title{
+    margin-bottom: 0.25rem;
+    font-weight:600;
 }
 
-.dot{
-    color: white;
-    font-size: 3em;
-    opacity: .5;
+.pub-authors {
+    margin-bottom: 0.25rem;
 }
 
-.active{
-    opacity: 1;
+.pub-venue {
+    font-style: italic;
+    color: #555; 
 }
 
 /* contact */
-#contact .text {
-    padding: 0 0 8% 8%;
-}
 
 #contact p{
     padding: 0;
