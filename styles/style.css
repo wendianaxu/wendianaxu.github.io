@@ -11,7 +11,7 @@
         font-weight:bold;
     }
 
-    p{
+    p, summary{
         font-size: 1rem;
     }
 
@@ -91,7 +91,7 @@
         font-size: 1.5rem;
     }
 
-    p{
+    p, summary{
         font-size: 1.15rem;
     }
 
@@ -153,6 +153,11 @@
     } */
 }
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; 
+}
+
 html, body{
     width: 100%;
 }
@@ -161,6 +166,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     color: #034148;
     background-color: #f4fbfb;
+    padding-top: 70px;
 }
 
 *{
@@ -197,6 +203,21 @@ a{
     text-decoration: none;
     color: inherit; 
 }
+
+details {
+    margin-top: 1rem; 
+}
+
+summary{
+    margin-bottom: 1rem; 
+}
+
+summary::marker {
+    color: #5DE0AE; 
+    font-size: 0.9rem; 
+}
+
+
 
 
 .in-text{
@@ -346,7 +367,7 @@ nav ul.right li::after{
 /* Target the Bootstrap navigation links */
 
 .navbar {
-    position: relative; /* This is crucial for positioning the pseudo-element */
+    /* position: relative; */
     padding-bottom: 8px; /* Add some space for the underline */
     color: #007582;
     background-color: #f4fbfb;
