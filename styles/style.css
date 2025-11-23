@@ -714,3 +714,49 @@ footer{
     margin: 1% 0;
 }
 
+
+/* overlay text for portfolio items */
+/* 1. Set the parent to relative so the overlay stays inside it */
+.gallery-item {
+    position: relative;
+    display: block; /* Ensures the anchor wraps the image correctly */
+    overflow: hidden; /* Optional: clips the corners if you have rounded images */
+}
+
+/* 2. Style the overlay to cover the whole image */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(116, 118, 118, 0.7); /* Semi-transparent */
+    
+    /* Center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Hide it by default */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+}
+
+/* 3. Style the text inside */
+.overlay-text {
+    color: #F4FBFB;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* 4. Show the overlay when hovering over the gallery-item */
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.img-wide {
+    width: 100%;
+    aspect-ratio: 2 / 1; /* A 2:1 ratio (panoramic) looks great for wide grid items */
+    object-fit: cover;   /* Ensures the image fills the box without distortion */
+}
